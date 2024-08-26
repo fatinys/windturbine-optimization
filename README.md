@@ -7,7 +7,26 @@ Currently, we have the collection, processing, and modelling done. All that is l
 ## **Project Directory**
 
 ```
-ENTER TREE HERE!!
+windturbine-optimization
+├───data
+│   ├───external
+│   ├───interim
+│   │   └───turbinelocsplit (API Dataframe Split)
+│   ├───processed
+│   └───raw
+│       └───weatherlocsplit (API Dataframe Split)
+├───notebooks
+│   ├───turbineexploration (Exploration and Preliminary Modelling of Turbine Data)
+│   └───windgeneration  (Exploration of Texas Wind Generation Data)
+├───references
+├───reports
+│   └───figures
+│       └───models (Figures of Model Evaluation)
+├───src
+│   ├───data (Data Acquisition and Preprocessing Scripts)
+│   ├───modelling (Model Classes and Methods)
+│   └───visualization (Data Visualization Scripts)
+└───windturbineoptimization
 
 ```
 
@@ -39,6 +58,37 @@ Most of the exploratory work done for this project was done interactively throug
 ### **Models**
 
 The models used in this project are fitted to classes for ease of access. Each class has methods to evaluate the model, and to plot residual and vs graphs. Check comments in `src/modelling/modelling.py` for direction on how to use. 
+
+# EDA Summary
+### Wind generation
+To pick the best months to pull weather data from, I wanted to understand when turbines are maximally efficient and produce the most energy. I was able to find wind energy generation data taken from the EIA(https://www.eia.gov/electricity/monthly/). I mapped this data and standardized it to account for technological advancements, to focus on the sole impact of wind and weather on energy generation.
+
+<img src="reports\figures\windgeneration_monthly.png" alt="Description" width="1000" height="550">
+
+
+We can clearly see a pattern in which energy generation is higher in months where there is more windflow and/or the wind is heavier. There is definitely a seasonal pattern to wind generation. From here we chose from around November through June to be the best time period to collect data.
+
+### Data Preprocessing
+
+<img src="reports\figures\turbinevar_corr.png" alt="Description" width="700" height="700">
+
+We opt to remove `t_rsa` (Rotor Swept Area), because it is essentially a function of the rotor diameter. The rest of the variables are safe, doesn't seem to have much risk of multicollinearity.
+
+We also removed outliers from the data via IQR.
+
+### Before
+
+<img src="reports\figures\before_processing.png" alt="Description" width="700" height="400">
+
+### After
+
+<img src="reports\figures\after_processing.png" alt="Description" width="700" height="400">
+
+
+
+
+
+
 
 
 # Modelling Summary
@@ -94,4 +144,6 @@ After fine tuning, these were the best we could get the models to perform.
 
 ## Model Selection
 
-From above, the standard regression methods seemed to be clearly beat out by the tree-based methods and Gradient Boosting. The Decision Tree model wins out on all parameters, adding the weather data added a slight performance boost, but we are keeping the weather data due to the nature of the core objective of the project.
+The tree-based methods and Gradient Boosting consistently outperformed the standard regression techniques. The Decision Tree model demonstrated had the best performance all around, perhaps there are some non-linear relationshops which the classical regressors couldn't handle for.The inclusion of weather data resulted in a marginal improvement in model performance. The boost was slight,but we kept the weather variables in our final model, because it is relevant to the objective.
+
+
