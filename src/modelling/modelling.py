@@ -100,11 +100,14 @@ class LinearRegression_model():
 
         resid = self.y_test-y_pred
         plt.scatter(y_pred, resid)
-        plt.title('Residual Plot')
+        plt.title('Residual Plot (Linear Regression)')
         plt.xlabel('Predicted')
         plt.ylabel('Residuals')
         plt.axhline(y=0, color='r', linestyle='--')
+        plt.savefig('reports/figures/models/linreg_resid.png', format='png', dpi=300)
         plt.show()
+
+
 
     def vs_plot(self, y_pred):
         """
@@ -116,9 +119,10 @@ class LinearRegression_model():
 
         plt.scatter(self.y_test, y_pred)
         plt.plot([self.y_test.min(), self.y_test.max()], [self.y_test.min(), self.y_test.max()], 'r--', lw=2)
-        plt.title('Actual vs Predicted')
+        plt.title('Actual vs Predicted (Linear Regression)')
         plt.xlabel('Actual')
         plt.ylabel('Predicted')
+        plt.savefig('reports/figures/models/linreg_vs.png', format='png', dpi=300)
         plt.show()
 
     def map_performance(self, df, model_name = None):
@@ -224,10 +228,11 @@ class RidgeRegression_model():
 
         resid = self.y_test-y_pred
         plt.scatter(y_pred, resid)
-        plt.title('Residual Plot')
+        plt.title('Residual Plot (Ridge Regression)')
         plt.xlabel('Predicted')
         plt.ylabel('Residuals')
         plt.axhline(y=0, color='r', linestyle='--')
+        plt.savefig('reports/figures/models/ridge_resid.png', format='png', dpi=300)
         plt.show()
 
     def vs_plot(self, y_pred):
@@ -240,9 +245,10 @@ class RidgeRegression_model():
 
         plt.scatter(self.y_test, y_pred)
         plt.plot([self.y_test.min(), self.y_test.max()], [self.y_test.min(), self.y_test.max()], 'r--', lw=2)
-        plt.title('Actual vs Predicted')
+        plt.title('Actual vs Predicted (Ridge Regression)')
         plt.xlabel('Actual')
         plt.ylabel('Predicted')
+        plt.savefig('reports/figures/models/ridge_vs.png', format='png', dpi=300)
         plt.show()
 
     def map_performance(self, df, model_name = None):
@@ -349,10 +355,11 @@ class LassoRegression_model():
 
         resid = self.y_test-y_pred
         plt.scatter(y_pred, resid)
-        plt.title('Residual Plot')
+        plt.title('Residual Plot (Lasso Regression)')
         plt.xlabel('Predicted')
         plt.ylabel('Residuals')
         plt.axhline(y=0, color='r', linestyle='--')
+        plt.savefig('reports/figures/models/lasso_resid.png', format='png', dpi=300)
         plt.show()
 
     def vs_plot(self, y_pred):
@@ -365,9 +372,10 @@ class LassoRegression_model():
 
         plt.scatter(self.y_test, y_pred)
         plt.plot([self.y_test.min(), self.y_test.max()], [self.y_test.min(), self.y_test.max()], 'r--', lw=2)
-        plt.title('Actual vs Predicted')
+        plt.title('Actual vs Predicted (Lasso Regression)')
         plt.xlabel('Actual')
         plt.ylabel('Predicted')
+        plt.savefig('reports/figures/models/lasso_vs.png', format='png', dpi=300)
         plt.show()
 
     def map_performance(self, df, model_name = None):
@@ -466,10 +474,11 @@ class DecisionTree_model():
 
         resid = self.y_test-y_pred
         plt.scatter(y_pred, resid)
-        plt.title('Residual Plot')
+        plt.title('Residual Plot (Decision Tree)')
         plt.xlabel('Predicted')
         plt.ylabel('Residuals')
         plt.axhline(y=0, color='r', linestyle='--')
+        plt.savefig('reports/figures/models/decision_resid.png', format='png', dpi=300)
         plt.show()
 
     def vs_plot(self, y_pred):
@@ -482,9 +491,10 @@ class DecisionTree_model():
 
         plt.scatter(self.y_test, y_pred)
         plt.plot([self.y_test.min(), self.y_test.max()], [self.y_test.min(), self.y_test.max()], 'r--', lw=2)
-        plt.title('Actual vs Predicted')
+        plt.title('Actual vs Predicted (Decision Tree)')
         plt.xlabel('Actual')
         plt.ylabel('Predicted')
+        plt.savefig('reports/figures/models/decision_vs.png', format='png', dpi=300)
         plt.show()
 
     def map_performance(self, df, model_name = None):
@@ -583,10 +593,11 @@ class RandomForest_model():
 
         resid = self.y_test-y_pred
         plt.scatter(y_pred, resid)
-        plt.title('Residual Plot')
+        plt.title('Residual Plot (Random Forest)')
         plt.xlabel('Predicted')
         plt.ylabel('Residuals')
         plt.axhline(y=0, color='r', linestyle='--')
+        plt.savefig('reports/figures/models/forest_resid.png', format='png', dpi=300)
         plt.show()
 
     def vs_plot(self, y_pred):
@@ -599,9 +610,10 @@ class RandomForest_model():
 
         plt.scatter(self.y_test, y_pred)
         plt.plot([self.y_test.min(), self.y_test.max()], [self.y_test.min(), self.y_test.max()], 'r--', lw=2)
-        plt.title('Actual vs Predicted')
+        plt.title('Actual vs Predicted (Random Forest)')
         plt.xlabel('Actual')
         plt.ylabel('Predicted')
+        plt.savefig('reports/figures/models/forest_vs.png', format='png', dpi=300)
         plt.show()
 
     def map_performance(self, df, model_name = None):
@@ -700,10 +712,11 @@ class GradientBoost_model():
 
         resid = self.y_test-y_pred
         plt.scatter(y_pred, resid)
-        plt.title('Residual Plot')
+        plt.title('Residual Plot (Gradient Boosting)')
         plt.xlabel('Predicted')
         plt.ylabel('Residuals')
         plt.axhline(y=0, color='r', linestyle='--')
+        plt.savefig('reports/figures/models/gradient_resid.png', format='png', dpi=300)
         plt.show()
 
     def vs_plot(self, y_pred):
@@ -716,9 +729,10 @@ class GradientBoost_model():
 
         plt.scatter(self.y_test, y_pred)
         plt.plot([self.y_test.min(), self.y_test.max()], [self.y_test.min(), self.y_test.max()], 'r--', lw=2)
-        plt.title('Actual vs Predicted')
+        plt.title('Actual vs Predicted (Gradient Boosting)')
         plt.xlabel('Actual')
         plt.ylabel('Predicted')
+        plt.savefig('reports/figures/models/gradient_vs.png', format='png', dpi=300)
         plt.show()
 
     def map_performance(self, df, model_name = None):
@@ -736,20 +750,28 @@ class GradientBoost_model():
                               self.metrics['Predict Time']]
         df
 
-# X = df.drop('t_cap',axis=1)
-# y = df['t_cap']
 
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= .3, random_state= 0)
 
 """
-model = Moel(X_train, y_train, X_test, y_test)
+EX:
+X = df.drop('t_cap',axis=1)
+y = df['t_cap']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= .3, random_state= 0)
+
+
+
+linreg = LinearRegression_model(X_train, y_train, X_test, y_test)
 
 # Fit the model and get predictions
-_, y_pred = model.fit_predict()
+_, y_pred = linreg.fit_predict()
 
 # Evaluate the model
-metrics = model.eval(y_pred)
+metrics = linreg.eval(y_pred)
+
+linreg.resid_plot(y_pred)
+linreg.vs_plot(y_pred)
 
 # Now you can map the performance
-model.map_performance(performance)
+linreg.map_performance(performance)
 """
