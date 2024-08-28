@@ -9,12 +9,25 @@ from sklearn.linear_model import LassoCV
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import GradientBoostingRegressor
-
+import pickle
 
 # Create Performance Table
 def create_performancetable():
     performance = pd.DataFrame(columns=['MAE', 'RMSE', 'r^2', 'MAPE', 'Training Time', 'Prediction Time'])
     return performance
+
+def to_pkl(model, filename: str):
+    """
+    Save a model to a .pkl file.
+    
+    Parameters:
+    model: The model object to be saved
+    filename (str): The name of the file to save the model to (including .pkl extension)
+    """
+    with open(filename, 'wb') as file:
+        pickle.dump(model, file)
+    
+    print(f"Model successfully saved to {filename}")
 
 
 
@@ -754,6 +767,8 @@ class GradientBoost_model():
 
 """
 EX:
+df = pd.read_csv('data/processed/fin_data.csv')
+
 X = df.drop('t_cap',axis=1)
 y = df['t_cap']
 
@@ -761,17 +776,17 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= .3, random_
 
 
 
-linreg = LinearRegression_model(X_train, y_train, X_test, y_test)
+model = LinearRegression_model(X_train, y_train, X_test, y_test)
 
 # Fit the model and get predictions
-_, y_pred = linreg.fit_predict()
+_, y_pred = model.fit_predict()
 
 # Evaluate the model
-metrics = linreg.eval(y_pred)
+metrics = model.eval(y_pred)
 
-linreg.resid_plot(y_pred)
-linreg.vs_plot(y_pred)
+model.resid_plot(y_pred)
+model.vs_plot(y_pred)
 
 # Now you can map the performance
-linreg.map_performance(performance)
+model.map_performance(performance)
 """
