@@ -144,6 +144,6 @@ After fine tuning, these were the best we could get the models to perform.
 
 ## Model Selection
 
-The tree-based methods and Gradient Boosting consistently outperformed the standard regression techniques. The Decision Tree model demonstrated had the best performance all around, perhaps there are some non-linear relationshops which the classical regressors couldn't handle for.The inclusion of weather data resulted in a marginal improvement in model performance. The boost was slight,but we kept the weather variables in our final model, because it is relevant to the objective.
+The tree-based methods and Gradient Boosting consistently outperformed the standard regression techniques. The Decision Tree model demonstrated had the best performance all around, perhaps there are some non-linear relationships which the classical regressors couldn't handle for.The inclusion of weather data resulted in a marginal improvement in model performance. The boost was slight,but we kept the weather variables in our final model, because it is relevant to the objective.
 
 
