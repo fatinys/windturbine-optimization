@@ -1,7 +1,7 @@
 # **Wind Turbine Capacity Optimzation**
 
 ## **CURRENT BUILD**
-Currently, we have the collection, processing, and modelling done. All that is left is to deploy the model via Flask locally, and then hopefully bring it to production with Azure. Working on an app that will allow a user to run the model locally. app.py is currently not functional.
+You can run the predictor locally by running `app.py`, deploying into production soon with Azure
 --------------------------
 
 ## **Project Directory**
