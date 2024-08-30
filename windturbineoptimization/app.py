@@ -6,7 +6,7 @@ import openmeteo_requests
 import requests_cache
 from retry_requests import retry
 
-app = Flask(__name__)
+flask_app = Flask(__name__)
 
 # Load the model
 model = pickle.load(open('models/treereg.pkl', 'rb'))
@@ -52,11 +52,11 @@ def get_weather_data(latitude, longitude):
     
     return weather_stats
 
-@app.route('/')
+@flask_app.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/predict', methods=['POST'])
+@flask_app.route('/predict', methods=['POST'])
 def predict():
     try:
         # Get input data from the form
