@@ -5,6 +5,7 @@ import pickle
 import openmeteo_requests
 import requests_cache
 from retry_requests import retry
+import os 
 
 app = Flask(__name__)
 
@@ -93,4 +94,4 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
