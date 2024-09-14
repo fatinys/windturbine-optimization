@@ -1,5 +1,5 @@
 # **Wind Turbine Capacity Optimzation**
-<img src="reports\figures\app.png" alt="Description" width="1000" height="525">
+<img src="reports\figures\app.png" alt="Description" width="1000" height="450">
 
 ## **CURRENT BUILD**
 You can run the predictor locally by running `app.py`, deploying into production soon with Azure
