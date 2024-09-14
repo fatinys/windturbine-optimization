@@ -4,6 +4,7 @@
 ### APP IS LIVE VIA AZURE:
 https://turbine-capacity-pred.azurewebsites.net/
 
+### Project Directory
 ```
 windturbine-optimization
 ├───data
