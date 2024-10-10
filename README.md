@@ -148,7 +148,5 @@ After fine tuning, these were the best we could get the models to perform.
 The tree-based methods and Gradient Boosting consistently outperformed the standard regression techniques. The Decision Tree model demonstrated had the best performance all around, perhaps there are some non-linear relationships which the classical regressors couldn't handle for.The inclusion of weather data resulted in a marginal improvement in model performance. The boost was slight,but we kept the weather variables in our final model, because it is relevant to the objective.
 
 
-### APP IS CURRENTLY UNDER MAINTENANCE VIA AZURE (need to upgrade subscription plan):
-https://turbine-capacity-pred.azurewebsites.net/
 
 
