@@ -1,8 +1,6 @@
 # **Wind Turbine Capacity Optimzation**
 <img src="reports\figures\app.png" alt="Description" width="1000" height="450">
 
-### APP IS LIVE VIA AZURE:
-https://turbine-capacity-pred.azurewebsites.net/
 
 ### Project Directory
 ```
@@ -144,5 +142,9 @@ After fine tuning, these were the best we could get the models to perform.
 ## Model Selection
 
 The tree-based methods and Gradient Boosting consistently outperformed the standard regression techniques. The Decision Tree model demonstrated had the best performance all around, perhaps there are some non-linear relationships which the classical regressors couldn't handle for.The inclusion of weather data resulted in a marginal improvement in model performance. The boost was slight,but we kept the weather variables in our final model, because it is relevant to the objective.
+
+
+### APP IS CURRENTLY UNDER MAINTENANCE VIA AZURE (need to upgrade subscription plan):
+https://turbine-capacity-pred.azurewebsites.net/
 
 
