@@ -2,6 +2,7 @@
 <img src="reports\figures\app.png" alt="Description" width="1000" height="450">
 
 App is deployed through Azure. 
+To run locally, run the app.py script
 
 CURRENTLY UNDER MAINTENANCE(need to upgrade subscription plan, or move over to AWS):
 https://turbine-capacity-pred.azurewebsites.net/
